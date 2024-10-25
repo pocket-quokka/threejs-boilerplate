@@ -30,7 +30,7 @@ if (WEBGL.isWebGLAvailable()) {
     scene = new THREE.Scene()
     scene.background = new THREE.Color(0xf0f0f0)
 
-    var rollOverGeo = new THREE.BoxBufferGeometry(50, 50, 50)
+    var rollOverGeo = new THREE.BoxGeometry(50, 50, 50)
     rollOverMaterial = new THREE.MeshBasicMaterial({
       color: 0xff0000,
       opacity: 0.5,
@@ -39,7 +39,7 @@ if (WEBGL.isWebGLAvailable()) {
     rollOverMesh = new THREE.Mesh(rollOverGeo, rollOverMaterial)
     scene.add(rollOverMesh)
 
-    cubeGeo = new THREE.BoxBufferGeometry(50, 50, 50)
+    cubeGeo = new THREE.BoxGeometry(50, 50, 50)
     cubeMaterial = new THREE.MeshLambertMaterial({
       color: 0xfeb74c,
       map: new THREE.TextureLoader().load('static/textures/square.png'),
@@ -51,7 +51,7 @@ if (WEBGL.isWebGLAvailable()) {
     raycaster = new THREE.Raycaster()
     mouse = new THREE.Vector2()
 
-    var geometry = new THREE.PlaneBufferGeometry(1000, 1000)
+    var geometry = new THREE.PlaneGeometry(1000, 1000)
     geometry.rotateX(-Math.PI / 2)
 
     plane = new THREE.Mesh(
@@ -135,7 +135,6 @@ if (WEBGL.isWebGLAvailable()) {
 
           objects.splice(objects.indexOf(intersect.object), 1)
         }
-
       } else {
         var voxel = new THREE.Mesh(cubeGeo, cubeMaterial)
         voxel.position.copy(intersect.point).add(intersect.face.normal)
