@@ -1,7 +1,7 @@
 {
   "name": "three-npm",
   "version": "1.0.0",
-  "description": "",
+  "description": "three js webpack boilerplate",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
